@@ -1,6 +1,7 @@
 var db = require(__dirname+'/../lib/mysql');//import ng mysql.js, connect to the mysql.js
 
 exports.find = function(req,res,next){
+	console.log(req.ip+ "find()");//logs
 	db.query("SELECT * FROM student",//query from our database, parameters (sql statement, error handling)
 		function(err,rows){
 		if(err) return next(err);//skip all route handlers
@@ -9,6 +10,7 @@ exports.find = function(req,res,next){
 };
 
 exports.findOne = function(req,res,next){//req.params.id//id is a parameter// so db.query has 3 parameters na
+	console.log(req.ip+ "findOne()");
 	db.query("SELECT * FROM student WHERE id=?",[req.params.id],//query from our database, parameters (sql statement, error handling)//pwedeng madaming ? depende
 		function(err,rows){//sa rows napupunta ang result ng query
 		if(err) return next(err);//skip all route handlers
