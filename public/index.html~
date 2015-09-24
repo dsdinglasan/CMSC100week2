@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CMSC 100 HTML </title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<form method="POST" action="http://localhost:5000/students"><!-- disabled="" para di makainput-->
+		<input type="text" name="name" placeholder="Name" required=""/> <br/><!-- pattern = regex para macheck yung value, required, yes, title- error msg-->
+		<input type="text" name="studno" placeholder="Student Number" pattern="^[0-9]{4}-[0-9]{5}$" title="2013-11111" required=""/> <br />
+		<input type="submit" value="Create"/>
+		</form>
+	</body>
+</html>
